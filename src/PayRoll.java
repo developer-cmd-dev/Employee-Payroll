@@ -1,23 +1,32 @@
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class PayRoll {
-    private List<Employee> employees;
+    private List<Employee> employeeList ;
 
     public PayRoll() {
-        employees = new ArrayList<>();
+        employeeList = new ArrayList<>();
     }
 
-    public void addEmployee(Employee employee){
-        employees.add(employee);
+    public void  addEmployee(Employee employee){
+       employeeList.add(employee);
+
     }
 
     public void removeEmployee(int id){
         Employee employeeToRemove = null;
-        for(Employee employee:employees){
+        for(Employee employee:employeeList){
             if(employee.getId() == id){
-                employees.remove(employee);
+                employeeList.remove(employee);
+                break;
             }
+        }
+    }
+
+    public void displayEmployees(){
+        for(Employee employees:employeeList){
+            System.out.println(employees);
         }
     }
 
